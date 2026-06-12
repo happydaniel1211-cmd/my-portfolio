@@ -662,17 +662,20 @@ html, body {
 }
 
 #wrapper {
-    width: 100%; /* [변경] 1200px 고정 대신 100% 사용 */
-    min-height: 100vh;
+    width: 100%; /* [변경] 1200px -> 100% */
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 header {
-    width: 100% !important; /* [변경] 100%로 변경 */
+    width: 100% !important; /* [변경] */
     left: 0 !important;
     margin-left: 0 !important;
+    padding: 0 5%; /* % 단위를 사용해 모바일/데스크탑 모두 대응 */
 }
 @media screen and (max-width: 768px) {
-    .main-title { font-size: 48px; } /* 제목 크기 줄이기 */
-    .update-grid { gap: 20px; }      /* 간격 줄이기 */
-    .img-row { gap: 20px; }          /* 간격 줄이기 */
+    .update-grid img, .img-row img {
+        width: 80% !important; /* 또는 90% */
+        height: auto !important; /* 비율 유지 */
+    }
 }
