@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "Cafe24 ClassicType";
+    src: url("fonts/Cafe24Classictype-v1.1.ttf") format("truetype");
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:        #f7f5f2;
+  --surface:   #ffffff;
+  --ink:       #2b2825;
+  --ink-soft:  #7a756f;
+  --ink-faint: #b5afa8;
+  --accent:    #c8a98a;       /* 웜 로즈골드 */
+  --accent-dim:#e8ddd4;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --shadow:    0 2px 16px rgba(43,40,37,.08);
+  --transition: 0.28s cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: "Cafe24 ClassicType", serif;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; }
+
+
+/* ── 헤더 ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247,245,242,.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--accent-dim);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* [수정] 로고 링크 스타일에 호버 트랜지션 추가 */
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.logo:hover {
+  opacity: 0.7; /* 로고에 마우스를 올렸을 때 클릭 가능하다는 느낌을 줌 */
+}
+
+.logo-main {
+  font-family: "Cafe24 ClassicType", serif;
+  font-size: 1.35rem;
+  letter-spacing: .02em;
+  color: var(--ink);
+}
+
+.logo-sub {
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.site-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.site-nav a {
+  font-size: 1.2rem;       
+  font-weight: 600;        
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color var(--transition);
+}
+
+.site-nav a:hover { color: var(--ink); }
+
+
+/* ── 히어로 ── */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 32px 48px;
+}
+
+.hero-eyebrow {
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: "Cafe24 ClassicType", serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-desc {
+  font-size: .82rem;
+  letter-spacing: .08em;
+  color: var(--ink-faint);
+}
+
+
+/* ── 갤러리 그리드 ── */
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+/* ── 카드 ── */
+.card {
+  display: block;
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(43,40,37,.13);
+}
+
+/* 이미지 래퍼 — 비율 고정 */
+.card-img-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.card:hover .card-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* 호버 오버레이 */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(43,40,37,.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.card:hover .card-overlay { opacity: 1; }
+
+.overlay-text {
+  font-size: .78rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.6);
+  padding: 9px 20px;
+  border-radius: 40px;
+}
+
+/* 카드 하단 정보 */
+.card-info {
+  padding: 16px 20px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-date {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: .04em;
+}
+
+.card-type {
+  font-size: .72rem;
+  letter-spacing: .1em;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+
+/* ── 푸터 ── */
+.site-footer {
+  border-top: 1px solid var(--accent-dim);
+  padding: 28px 32px;
+  text-align: center;
+  font-size: .75rem;
+  letter-spacing: .08em;
+  color: var(--ink-faint);
+}
+
+
+/* ── 반응형 ── */
+@media (max-width: 600px) {
+  .header-inner { padding: 16px 20px; }
+  .site-nav { gap: 20px; }
+  .hero { padding: 48px 20px 32px; }
+  .gallery { padding: 0 20px 60px; gap: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}

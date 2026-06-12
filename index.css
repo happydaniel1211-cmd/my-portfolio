@@ -1,0 +1,869 @@
+/* -----------------------------------------------------------------------
+폰트 설정
+----------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "Cafe24 ClassicType";
+    src: url("fonts/Cafe24Classictype-v1.1.ttf") format("truetype");
+}
+
+
+/* -----------------------------------------------------------------------
+초기화 및 기본값 설정
+----------------------------------------------------------------------- */
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: "Cafe24 ClassicType", sans-serif; 
+    background-color: #e9e9e9; 
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+li { 
+    list-style: none; 
+}
+
+
+/* -----------------------------------------------------------------------
+header 영역 - 로고, 네비게이션
+----------------------------------------------------------------------- */
+
+header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 80px;
+    background: #282828; 
+    color: #fff; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 5%; 
+    z-index: 1000;
+}
+
+#logo { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+}
+
+.navmenu {
+    display: flex;
+}
+
+.navmenu a { 
+    margin-left: 25px; 
+    font-size: 1.1rem; 
+    transition: 0.3s; 
+}
+
+.navmenu a:hover { 
+    color: #ff0000; 
+}
+
+
+/* -----------------------------------------------------------------------
+본문 공통 컨테이너
+----------------------------------------------------------------------- */
+
+.container { 
+    width: 100%; 
+    margin-top: 80px; 
+}
+
+
+/* -----------------------------------------------------------------------
+메인 섹션 (Hero Section)
+----------------------------------------------------------------------- */
+
+.main-sec {
+    position: relative; 
+    width: 100%; 
+    height: calc(100vh - 80px);
+    background: #fff; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 10%;
+}
+
+.main-content { 
+    z-index: 10; 
+}
+
+.sub-title { 
+    font-size: 42px; 
+    margin-bottom: 10px; 
+	color:#fff
+}
+
+.main-title { 
+    font-size: 88px; 
+    line-height: 1.0; 
+    color: #0b1e33; 
+    margin-bottom: 5px; 
+}
+
+.author-name { 
+    font-size: 1.5rem;
+	margin-top: 20; 
+    margin-bottom: 150px; 
+}
+
+.btn-primary { 
+    display: inline-block; 
+    padding: 25px 40px; 
+
+    outline: 3px solid #000;
+    outline-offset: 5px;
+
+    background: #000; 
+    color: #fff; 
+    font-weight: bold;
+	font-size: 32px; 
+    transition: 0.3s;
+	text-align: center;
+}
+
+.btn-primary:hover { 
+    background: #ff0000; 
+    outline-color: #ff0000 
+}
+
+.main-bg { 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; /* 기준점을 화면 중앙으로 */
+    transform: translate(-50%, -50%); /* 이미지 자신의 중심을 중앙에 맞춤 */
+    
+    height: 100%; 
+    width: auto; 
+    object-fit: cover; 
+    opacity: 0.5; /* 중앙에 올 경우 글자와 겹치므로 투명도를 낮추는 게 좋습니다 */
+    z-index: 1;
+}
+
+
+/* -----------------------------------------------------------------------
+업데이트 섹션
+----------------------------------------------------------------------- */
+
+.update-sec { 
+    padding-top: 20px;
+	padding-bottom: 160px; 
+    background: #fff5f0; 
+    text-align: center; 
+	color: #0B1E33
+}
+
+.sec-header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+	width: 100%; 
+    gap: 30px;  
+}
+
+.sec-desc {
+    text-align: right;    
+    padding-right: 63px;   
+    margin-top: -65px;     
+    font-size: 24px;    
+    color: #333;         
+}
+
+.line { 
+    flex: 1; 
+    height: 4px; 
+    background: #000; 
+}
+.left-line {
+    flex: 0.4;
+}
+
+.right-line {
+    flex: 1.6; 
+}
+
+.sec-header h2 { 
+    font-size: 88px;
+}
+
+.update-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 100px; 
+    margin: 40px 0; 
+    flex-wrap: wrap; 
+}
+
+.update-grid img { 
+    width: 300px; 
+    height: 300px; 
+    object-fit: cover; 
+}
+
+.update-banner { 
+	position: relative;
+	top: -250px;
+	margin-bottom: -250px;
+
+	width: 100%; 
+    max-width: 1300px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* -----------------------------------------------------------------------
+프로필 섹션 (바우하우스 스타일)
+----------------------------------------------------------------------- */
+.profile-sec { 
+    padding: 100px 5%;
+    background: #fff; 
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 배경 장식 도형 */
+.profile-sec .deco-shape {
+    position: absolute;
+    z-index: 1;
+}
+.profile-sec .circle {
+    width: 300px;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+}
+.profile-sec .square {
+    width: 180px;
+    height: 40px;
+    background-color: #363636;
+    border-radius: 20px;
+    top: 60px;
+    right: 10%;
+}
+
+/* 프로필 전체 컨테이너 */
+.profile-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 상단 타이틀 바 */
+.profile-tag-bar {
+    width: 100%;
+    background: #E83737; 
+    padding: 15px 30px;
+    border: 4px solid #000;
+    border-bottom: none; /* 아래 카드 테두리와 겹침 방지 */
+    display: flex;
+    align-items: center;
+}
+.tag-label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+/* 메인 카드 레이아웃 (2단 분할) */
+.profile-card-layout { 
+    width: 100%; 
+    background: #282828; /* 어두운 차콜/블랙으로 대비감 조절 */
+    border: 4px solid #000;
+    box-shadow: 12px 12px 0px #000; /* 브루탈리즘 특유의 하드 섀도우 */
+    display: flex; 
+    color: #fff; 
+}
+
+/* 왼쪽 구역 (이미지 + 이름) */
+.profile-side-left {
+    width: 40%;
+    padding: 50px;
+    border-right: 4px solid #000;
+    background: #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile-img-wrapper {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+    border: 4px solid #000;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 6px 6px 0px #E83737;
+}
+.profile-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-meta {
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+}
+.profile-name {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.profile-birth {
+    font-size: 18px;
+    color: #E83737;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 오른쪽 구역 (소개글 + 스킬) */
+.profile-side-right {
+    width: 60%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* 소개글 상자 */
+.profile-intro-box {
+    width: 100%;
+}
+.intro-highlight {
+    font-size: 28px;
+    color: #E83737;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.intro-divider {
+    height: 2px;
+    background: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.intro-paragraph {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+/* 스킬 구역 */
+.profile-skills-box {
+    width: 100%;
+}
+.skills-title {
+    font-size: 22px;
+    border-bottom: 2px solid #E83737;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+.skills-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.skill-block {
+    background: #333;
+    border: 2px solid #000;
+    padding: 15px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+}
+.skill-block:hover {
+    transform: translateY(-5px);
+    background: #E83737;
+    border-color: #fff;
+}
+.icon-wrap {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.icon-wrap img {
+    max-height: 100%;
+    max-width: 65px;
+    object-fit: contain;
+}
+.skill-block span {
+    font-size: 14px;
+    display: block;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------------------------
+갤러리 섹션
+----------------------------------------------------------------------- */
+.gallery-btn-area {
+    margin-top: 40px; /* 이미지들과의 간격 */
+    margin-bottom: 0px; /* 바닥과의 간격 */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-secondary {
+    display: inline-block; 
+    padding: 20px 40px; 
+
+    border: 3px solid #fff;
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+
+    background-color: #fff; 
+    color: #000; 
+    font-weight: bold;
+    font-size: 24px; 
+    transition: 0.3s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-secondary:hover { 
+    background: #ff0000; 
+    border-color: #ff0000; 
+    outline-color: #ff0000;
+    color: #fff;
+}
+
+
+.gallery-sec { 
+    padding: 0; 
+    background: #fff; 
+}
+
+.gallery-title-box { 
+    background: #292929; 
+    color: #fff; 
+    padding: 15px; 
+    text-align: center; 
+}
+
+.gallery-title-box h2 { 
+    font-size: 4rem; 
+}
+
+.gallery-category { 
+    margin-top: 0;
+}
+
+.sd-bg { 
+    background: #3c3c3c; 
+    color: #fff; 
+	padding: 80px 0 40px 0;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cat-title { 
+    display: flex; 
+    align-items: center;
+	justify-content: center; 
+    gap: 30px; 
+    margin-bottom: 40px; 
+	width: 100%;
+}
+
+.cat-line { 
+	flex: 1;
+    width: 100%; 
+    height: 5px; 
+    background: #fff; 
+	margin-top: -70px; 
+}
+
+.cat-title h3 { 
+    font-size: 80px; 
+    white-space: nowrap; 
+	font-size: 100px;
+	margin-top: -70px; 
+}
+
+.img-row { 
+    display: flex; 
+	flex-direction: row;
+	align-items: center;
+    justify-content: center; 
+    gap: 80px; 
+    flex-wrap: wrap;
+	width: 100%;
+	margin-top: -10px; 
+}
+
+.img-row img { 
+    width: 350px; 
+	height: 350px;
+    object-fit: contain;
+	background: transparent; 
+	border: 3px solid #ffffff; 
+    
+    /* 이미지와 테두리 사이의 간격 (필요하면 사용하세요) */
+    padding: 10px;
+}
+
+/* -----------------------------------------------------------------------
+footer 영역 - 저작권 정보
+----------------------------------------------------------------------- */
+
+footer { 
+    background: #292929; 
+    color: #fff; 
+    padding: 20px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; /* 끝 정렬보다 중앙 정렬이 안정적입니다 */
+    position: relative; /* [추가] absolute 요소의 기준점 */
+    width: 100%;
+}
+
+.footer-left p { 
+    font-size: 10px; 
+}
+
+.footer-center { 
+    position: absolute; 
+    left: 50%; 
+    top: 50%; /* 세로 중앙 추가 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+}
+
+/* -----------------------------------------------------------------------
+[1] 애니메이션 코드를 여기에 넣습니다 (모든 화면 공통 적용)
+----------------------------------------------------------------------- */
+
+/* 메인 섹션 등장 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.main-content > * {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+.main-content .sub-title { animation-delay: 0.2s; }
+.main-content .main-title { animation-delay: 0.4s; }
+.main-content .author-name { animation-delay: 0.6s; }
+.main-content .btn-primary { animation-delay: 0.8s; }
+
+/* 업데이트 섹션 이미지 애니메이션 */
+.update-grid img { 
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.update-grid img:nth-child(1) { transition-delay: 0s; }
+.update-grid img:nth-child(2) { transition-delay: 0.2s; }
+.update-grid img:nth-child(3) { transition-delay: 0.4s; }
+
+.update-grid.visible img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 프로필 이미지 애니메이션 */
+.profile-img-wrapper {
+    opacity: 0;                             
+    transform: translateY(-50px);           
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+.profile-img-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);               
+}
+
+/* 프로필 상세 글 애니메이션 */
+.profile-side-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.profile-side-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.img-row img { 
+    opacity: 0;
+    transform: scale(0.85) translateY(40px);
+    /* cubic-bezier를 사용해 끝에서 살짝 통통 튀는 탄성 효과를 줍니다 */
+    transition: opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease; /* 기존 호버 테두리 변경용 */
+}
+
+/* 2. 각 이미지별 등장 딜레이 (왼쪽부터 순서대로 톡.톡.톡 등장) */
+.img-row img:nth-child(1) { transition-delay: 0s; }
+.img-row img:nth-child(2) { transition-delay: 0.15s; }
+.img-row img:nth-child(3) { transition-delay: 0.3s; }
+
+/* 3. 화면에 감지되었을 때 원래 크기와 위치로 복구 */
+.img-row.visible img {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+/* -----------------------------------------------------------------------
+반응형 설정
+----------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+
+    .main-title {
+        font-size: 60px;
+    }
+
+    .sub-title {
+        font-size: 32px;
+    }
+
+    .update-grid img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .sec-header h2 {
+        font-size: 60px;
+    }
+
+    .cat-title h3 {
+        font-size: 70px;
+    }
+
+    .img-row img {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* 기존 스크롤 및 이동 여백 설정 유지 */
+#update {
+    scroll-margin-top: 80px; 
+}
+
+#profile, #gallery {
+    scroll-margin-top: 80px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+@media (max-width: 768px) {
+
+    /* 헤더 */
+    header {
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #logo {
+        font-size: 1.2rem;
+    }
+
+    .navmenu {
+        gap: 15px;
+    }
+
+    .navmenu a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+
+    /* 메인 */
+    .container {
+        margin-top: 120px;
+    }
+
+    .main-sec {
+        height: auto;
+        padding: 60px 5%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .main-title {
+        font-size: 42px;
+    }
+
+    .sub-title {
+        font-size: 24px;
+    }
+
+    .author-name {
+        font-size: 18px;
+        margin-bottom: 60px;
+    }
+
+    .btn-primary {
+        font-size: 20px;
+        padding: 15px 25px;
+    }
+
+
+    /* 업데이트 */
+    .sec-header {
+        gap: 10px;
+    }
+
+    .sec-header h2 {
+        font-size: 42px;
+    }
+
+    .sec-desc {
+        text-align: center;
+        padding: 0 20px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .update-grid {
+        gap: 30px;
+    }
+
+    .update-grid img {
+        width: 80%;
+        height: auto;
+    }
+
+    .update-banner {
+        top: -80px;
+        margin-bottom: -80px;
+        width: 90%;
+    }
+
+
+    /* 프로필 */
+    .profile-name {
+        font-size: 32px;
+    }
+
+    .intro-highlight {
+        font-size: 22px;
+    }
+
+    .intro-paragraph {
+        font-size: 16px;
+    }
+
+    .skills-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* 갤러리 */
+    .gallery-title-box h2 {
+        font-size: 42px;
+    }
+
+    .cat-title {
+        gap: 10px;
+    }
+
+    .cat-title h3 {
+        font-size: 36px;
+        margin-top: 0;
+    }
+
+    .cat-line {
+        margin-top: 0;
+    }
+
+    .img-row {
+        gap: 25px;
+    }
+
+    .img-row img {
+        width: 85%;
+        height: auto;
+    }
+
+    .btn-secondary {
+        font-size: 18px;
+        padding: 15px 25px;
+    }
+
+
+    /* 푸터 */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 30px 20px;
+    }
+
+    .footer-center {
+        position: static;
+        transform: none;
+    }
+
+}
+@media (max-width: 480px) {
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .sub-title {
+        font-size: 18px;
+    }
+
+    .sec-header h2 {
+        font-size: 32px;
+    }
+
+    .cat-title h3 {
+        font-size: 28px;
+    }
+
+    .profile-tag-bar {
+        padding: 10px;
+    }
+
+    .tag-label {
+        font-size: 18px;
+    }
+
+    .skills-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
