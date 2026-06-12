@@ -777,6 +777,9 @@ header {
     .update-grid img {
         width: 80%;
         height: auto;
+        border: 4px solid #000 !important; 
+        box-shadow: 8px 8px 0 #000 !important;
+        padding: 8px;
     }
 
     .update-banner {
