@@ -12,27 +12,26 @@
 초기화 및 기본값 설정
 ----------------------------------------------------------------------- */
 
-html {
-    width: 100%;
-    overflow-x: hidden; /* 가로 스크롤 강제 차단 */
-    overflow-y: scroll; /* 스크롤바가 생겼다 사라지는 레이아웃 떨림 방지 */
-    scroll-behavior: smooth;
-}
-
-body { 
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-family: "Cafe24 ClassicType", sans-serif; 
-    background-color: #e9e9e9; 
-    overflow-x: hidden; /* 가로 스크롤 방지 */
-    line-height: 1.6;
-}
-
 * { 
     margin: 0; 
     padding: 0; 
-    box-sizing: border-box; /* 패딩과 테두리가 너비에 포함되게 함 */
+    box-sizing: border-box; 
+}
+
+body { 
+    font-family: "Cafe24 ClassicType", sans-serif; 
+    background-color: #e9e9e9; 
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+li { 
+    list-style: none; 
 }
 
 
@@ -122,26 +121,24 @@ header {
     margin-bottom: 150px; 
 }
 
-.btn-primary, 
-.btn-primary:visited, 
-.btn-primary:link { 
+.btn-primary { 
     display: inline-block; 
     padding: 25px 40px; 
-    outline: 3px solid #000 !important; 
+
+    outline: 3px solid #000;
     outline-offset: 5px;
-    background: #000 !important; 
-    color: #fff !important; 
+
+    background: #000; 
+    color: #fff; 
     font-weight: bold;
-    font-size: 32px; 
+	font-size: 32px; 
     transition: 0.3s;
-    text-align: center;
-    text-decoration: none !important;
+	text-align: center;
 }
 
 .btn-primary:hover { 
-    background: #ff0000 !important; 
-    outline-color: #ff0000 !important;
-    color: #fff !important;
+    background: #ff0000; 
+    outline-color: #ff0000 
 }
 
 .main-bg { 
@@ -435,29 +432,28 @@ header {
     width: 100%;
 }
 
-.btn-secondary, 
-.btn-secondary:visited, 
-.btn-secondary:link { 
+.btn-secondary {
     display: inline-block; 
     padding: 20px 40px; 
-    border: 3px solid #fff !important;
-    outline: 2px solid #fff !important;
+
+    border: 3px solid #fff;
+    outline: 2px solid #fff;
     outline-offset: 5px;
-    background-color: #fff !important; 
-    color: #000 !important; 
+
+    background-color: #fff; 
+    color: #000; 
     font-weight: bold;
     font-size: 24px; 
     transition: 0.3s;
     text-align: center;
     cursor: pointer;
-    text-decoration: none !important;
 }
 
 .btn-secondary:hover { 
-    background: #ff0000 !important; 
-    border-color: #ff0000 !important; 
-    outline-color: #ff0000 !important;
-    color: #fff !important;
+    background: #ff0000; 
+    border-color: #ff0000; 
+    outline-color: #ff0000;
+    color: #fff;
 }
 
 
@@ -648,31 +644,38 @@ footer {
 ----------------------------------------------------------------------- */
 
 @media (max-width: 1200px) {
-
-    .main-title {
-        font-size: 60px;
+    /* [수정] 새 프로필 레이아웃에 맞춘 반응형 설정 */
+    .profile-card-layout {
+        flex-direction: column;
     }
-
-    .sub-title {
-        font-size: 32px;
+    .profile-side-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 4px solid #000;
+        padding: 40px 20px;
     }
-
-    .update-grid img {
-        width: 240px;
-        height: 240px;
+    .profile-side-right {
+        width: 100%;
+        padding: 40px 20px;
     }
-
-    .sec-header h2 {
-        font-size: 60px;
+    .skills-grid-layout {
+        grid-template-columns: repeat(2, 1fr); /* 모바일/태블릿에서는 스킬을 2열로 변경 */
     }
-
-    .cat-title h3 {
-        font-size: 70px;
+    
+    /* 기존 메인 섹션 반응형 유지 */
+    .main-title { 
+        font-size: 3rem; 
     }
-
-    .img-row img {
-        width: 280px;
-        height: 280px;
+    .main-bg { 
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        opacity: 0.5; 
+        z-index: 1;
     }
 }
 
@@ -687,90 +690,4 @@ footer {
 
 html {
     scroll-behavior: smooth;
-}
-/* -----------------------------------------------------------------------
-모바일 반응형 추가 코드
------------------------------------------------------------------------ */
-@media (max-width: 768px) {
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    .main-title { font-size: 40px !important; }
-    .sub-title { font-size: 20px !important; }
-    
-    /* 프로필 카드 세로 정렬 */
-    .profile-card-layout { 
-        flex-direction: column; 
-    }
-    .profile-side-left, .profile-side-right { 
-        width: 100% !important; 
-        padding: 20px !important;
-    }
-
-    /* 갤러리 이미지 모바일 최적화 */
-    .img-row {
-        gap: 20px !important;
-        flex-direction: column !important;
-    }
-    .img-row img {
-        width: 280px !important;
-        height: 280px !important;
-    }
-
-    /* 배너 강제 너비 조정 */
-    .update-banner {
-        width: 90% !important;
-        margin-top: 50px !important;
-    }
-    
-    /* 스킬 그리드 조정 */
-    .skills-grid-layout {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-/* 1. 메인 섹션 좌우 여백 확보 */
-    .main-sec {
-        padding: 0 5% !important; /* 화면 끝에 딱 붙지 않게 여백 5% 추가 */
-    }
-
-    /* 2. 본문 컨테이너 좌우 여백 보정 */
-    .container {
-        padding: 0 15px; /* 좌우에 최소한의 여백을 둠 */
-        box-sizing: border-box;
-    }
-
-    /* 3. 프로필 카드 내부 글자 정렬 */
-    .profile-side-right {
-        text-align: left; /* 글자를 왼쪽 정렬로 바꿔서 가독성 향상 */
-    }
-
-    /* 4. 업데이트 그리드 간격 조정 */
-    .update-grid {
-        gap: 20px !important;
-    }
-
-    /* 5. 갤러리 타이틀 폰트 크기 줄이기 */
-    .cat-title h3 {
-        font-size: 40px !important; /* 너무 큰 글씨를 줄임 */
-    }
-}
-.container {
-    width: 100%;
-    overflow-x: hidden;
-}
-
-section {
-    width: 100%;
-    max-width: 100%; /* 어떤 섹션도 화면 너비보다 커질 수 없음 */
-}
-
-/* 이미지가 가끔 레이아웃을 밀어내는 것을 방지 */
-img {
-    max-width: 100%;
-    height: auto;
-}
-a {
-    text-decoration: none !important;
-    color: inherit;
 }
