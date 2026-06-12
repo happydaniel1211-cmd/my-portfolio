@@ -240,12 +240,68 @@ img { display: block; width: 100%; }
 
 /* ── 반응형 ── */
 @media (max-width: 600px) {
-  .header-inner { padding: 16px 20px; }
-  .site-nav { gap: 20px; }
-  .hero { padding: 48px 20px 32px; }
-  .gallery { padding: 0 20px 60px; gap: 18px; }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; }
+  /* 헤더 */
+  .header-inner {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .logo {
+    gap: 5px;
+  }
+
+  .logo-main {
+    font-size: 1.1rem;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .site-nav {
+    gap: 18px;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* 본문 */
+  .hero {
+    padding: 40px 20px 32px;
+  }
+
+  .gallery {
+    padding: 0 20px 60px;
+    gap: 18px;
+  }
+}
+@media (max-width: 400px) {
+
+  .header-inner {
+    padding: 12px 12px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .logo-main {
+    font-size: 1rem;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
+  }
+
+  .site-nav {
+    gap: 12px;
+  }
+
+  .site-nav a {
+    font-size: 0.8rem;
+  }
 }
