@@ -679,3 +679,9 @@ html {
         grid-template-columns: repeat(4, 1fr) !important;
     }
 }
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 가로 스크롤을 방지하는 가장 안전한 방법 */
+}
