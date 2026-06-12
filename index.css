@@ -652,15 +652,29 @@ footer {
 html {
     scroll-behavior: smooth;
 }
-@media (max-width: 1024px) {
-    body {
-        /* PC 레이아웃의 기준 너비를 1200px 정도로 가정 */
-        width: 1200px; 
-        transform-origin: top left;
-        /* 모바일 화면 너비에 맞춰 비율 계산: (현재 창 너비 / 1200) */
-        transform: scale(calc(100vw / 1200));
-        overflow-x: hidden;
-    }
+@media (max-width: 768px) {
+    /* 전체 폰트 크기 조정 */
+    html { font-size: 10px; }
+    header { height: 60px; padding: 0 15px; }
+    
+    /* 메인 섹션 */
+    .main-sec { height: 50vh; padding: 0 5%; }
+    .main-title { font-size: 3rem; }
+    .sub-title { font-size: 1.5rem; }
+    .btn-primary { font-size: 1.5rem; padding: 15px 20px; outline-offset: 2px; }
+    
+    /* 프로필 섹션: 세로 정렬 */
+    .profile-card-layout { flex-direction: column; }
+    .profile-side-left, .profile-side-right { width: 100% !important; padding: 20px; }
+    
+    /* 갤러리 섹션 */
+    .img-row { gap: 20px; }
+    .img-row img { width: 140px; height: 140px; }
+    .cat-title h3 { font-size: 3rem; }
+    
+    /* 푸터 */
+    footer { flex-direction: column; gap: 10px; text-align: center; }
+    .footer-center { position: relative; left: 0; top: 0; transform: none; }
 }
 
 /* 추가: 가로 스크롤 강제 방지 */
