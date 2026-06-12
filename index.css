@@ -729,6 +729,31 @@ html {
     .skills-grid-layout {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+/* 1. 메인 섹션 좌우 여백 확보 */
+    .main-sec {
+        padding: 0 5% !important; /* 화면 끝에 딱 붙지 않게 여백 5% 추가 */
+    }
+
+    /* 2. 본문 컨테이너 좌우 여백 보정 */
+    .container {
+        padding: 0 15px; /* 좌우에 최소한의 여백을 둠 */
+        box-sizing: border-box;
+    }
+
+    /* 3. 프로필 카드 내부 글자 정렬 */
+    .profile-side-right {
+        text-align: left; /* 글자를 왼쪽 정렬로 바꿔서 가독성 향상 */
+    }
+
+    /* 4. 업데이트 그리드 간격 조정 */
+    .update-grid {
+        gap: 20px !important;
+    }
+
+    /* 5. 갤러리 타이틀 폰트 크기 줄이기 */
+    .cat-title h3 {
+        font-size: 40px !important; /* 너무 큰 글씨를 줄임 */
+    }
 }
 .container {
     width: 100%;
