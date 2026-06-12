@@ -672,3 +672,219 @@ header {
     margin-left: 0 !important;
     padding: 0 5%; /* % 단위를 사용해 모바일/데스크탑 모두 대응 */
 }
+@media screen and (max-width: 768px) {
+
+    /* 기본 설정 */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* =====================
+       HEADER
+    ===================== */
+    header {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    #logo {
+        font-size: 1rem;
+    }
+
+    .navmenu a {
+        font-size: 0.8rem;
+        margin-left: 12px;
+    }
+
+    .container {
+        margin-top: 60px;
+    }
+
+
+    /* =====================
+       MAIN SECTION
+    ===================== */
+
+    .main-sec {
+        height: calc(100vh - 60px);
+        padding: 0 8%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .main-content {
+        z-index: 10;
+    }
+
+    .sub-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .main-title {
+        font-size: 42px;
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+
+    .author-name {
+        font-size: 1rem;
+        margin-bottom: 50px;
+    }
+
+    .btn-primary {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .main-bg {
+        width: auto;
+        height: 100%;
+        object-position: center;
+        opacity: 0.35;
+    }
+
+
+    /* =====================
+       UPDATE
+    ===================== */
+
+    .sec-header {
+        gap: 10px;
+    }
+
+    .sec-header h2 {
+        font-size: 40px;
+    }
+
+    .sec-desc {
+        text-align: center;
+        padding: 0 20px;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .update-grid {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .update-grid img {
+        width: 80%;
+        height: auto;
+    }
+
+    .update-banner {
+        top: 0;
+        margin-bottom: 0;
+        width: 90%;
+    }
+
+
+    /* =====================
+       PROFILE
+    ===================== */
+
+    .profile-sec {
+        padding: 60px 5%;
+    }
+
+    .tag-label {
+        font-size: 16px;
+    }
+
+    .profile-card-layout {
+        flex-direction: column;
+    }
+
+    .profile-side-left,
+    .profile-side-right {
+        width: 100%;
+        padding: 25px;
+        border-right: none;
+    }
+
+    .profile-side-left {
+        border-bottom: 4px solid #000;
+    }
+
+    .profile-name {
+        font-size: 36px;
+    }
+
+    .intro-highlight {
+        font-size: 20px;
+    }
+
+    .intro-paragraph {
+        font-size: 14px;
+    }
+
+    .skills-title {
+        font-size: 18px;
+    }
+
+    .skills-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+
+    /* =====================
+       GALLERY
+    ===================== */
+
+    .gallery-title-box h2 {
+        font-size: 2rem;
+    }
+
+    .cat-title {
+        gap: 10px;
+    }
+
+    .cat-title h3 {
+        font-size: 32px;
+        margin-top: 0;
+    }
+
+    .cat-line {
+        margin-top: 0;
+        height: 3px;
+    }
+
+    .img-row {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .img-row img {
+        width: 80%;
+        height: auto;
+    }
+
+    .btn-secondary {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+
+    /* =====================
+       FOOTER
+    ===================== */
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .footer-center {
+        position: static;
+        transform: none;
+    }
+
+    .footer-left p {
+        font-size: 12px;
+    }
+}
