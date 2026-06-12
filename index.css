@@ -652,30 +652,14 @@ footer {
 html {
     scroll-behavior: smooth;
 }
-@media (max-width: 768px) {
-    /* 폰트나 요소 크기를 모바일에 맞춰 일괄 축소 */
+@media (max-width: 1024px) {
     body {
-        font-size: 14px;
-    }
-    
-    .main-title { font-size: 40px !important; }
-    .sec-header h2 { font-size: 40px !important; }
-    
-    /* 레이아웃 깨짐 방지: 고정 px 대신 유연하게 조정 */
-    .update-grid, .img-row {
-        gap: 20px !important;
-    }
-    
-    .update-grid img, .img-row img {
-        width: 150px !important;
-        height: 150px !important;
-    }
-
-    .profile-card-layout {
-        flex-direction: column;
-    }
-    .profile-side-left, .profile-side-right {
-        width: 100% !important;
+        /* PC 레이아웃의 기준 너비를 1200px 정도로 가정 */
+        width: 1200px; 
+        transform-origin: top left;
+        /* 모바일 화면 너비에 맞춰 비율 계산: (현재 창 너비 / 1200) */
+        transform: scale(calc(100vw / 1200));
+        overflow-x: hidden;
     }
 }
 
